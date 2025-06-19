@@ -19,6 +19,18 @@ This study tests whether the language U.S. public firms use to discuss artificia
 | `03_SummaryStatistics.ipynb` | Compute descriptive statistics and visualisations |
 | `04_Regressions.ipynb` | Run portfolio sorts and cross-sectional regressions |
 
+## 📦 Key Data Assets
+
+| File | What’s Inside | Size / Format |
+|---|---|---|
+| **`perfect_balanced_ai_dataset.csv`** | Raw AI-score matrix — every firm-year (799 × 5) × 3 LLMs × 8 dimensions | ~30 MB, CSV |
+| **`final_clean_dataset_filtered_with_corrected_factor_loadings.csv`** | Full modelling dataset — excess returns, AI factors, controls, dynamic betas | ~40 MB, CSV |
+| **`panel_data_text_sample50.parquet`** | *Sample* of the original 10-K text panel: first 25 + last 25 observations (≈ 50 rows × two long-text columns) | ~5 MB, Parquet |
+
+> **Why the sample file?**  
+> The full `panel_data_charactermax200k.parquet` (~3 GB) is too large for GitHub.  
+> Re-running **`01_Data_Loading_and_Preparation.ipynb`** will regenerate the full file if needed.
+
 ---
 
 ### 01_Data_Loading_and_Preparation.ipynb
@@ -66,3 +78,17 @@ This study tests whether the language U.S. public firms use to discuss artificia
 ## 🔧 Requirements
 * Python ≥ 3.10  
 * Core libraries: `pandas`, `numpy`, `scikit-learn`, `statsmodels`, `matplotlib`, `seaborn`, `yfinance`, `openai`, `google-generativeai`  
+* See `environment.yml` (or install manually with `pip`/`conda`).  
+
+---
+
+## 📜 License
+MIT — see `LICENSE` file.
+
+---
+
+> **Straight talk:** The code is research-grade, not production-ready. Expect long runtimes and substantial API costs if you reproduce the LLM scoring step.
+
+
+
+
